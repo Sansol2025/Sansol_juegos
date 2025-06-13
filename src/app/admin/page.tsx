@@ -23,7 +23,7 @@ import type { Verifier } from '@/types/verifier';
 import Image from 'next/image';
 import { cn } from "@/lib/utils";
 import type { ParticipantWithFirestoreId, Participant } from '@/types/participant';
-import type { GameWin, GameWinWithId } from '@/types/gameWin';
+import type { GameWin } from '@/types/gameWin'; // Corrected: GameWinWithId removed
 
 const DEFAULT_PRIZE_FREQUENCY = 10;
 const DEFAULT_PRIZE_STOCK = 10;
@@ -44,7 +44,7 @@ const prizeOptions = [
 ];
 
 interface ParticipantActivity extends ParticipantWithFirestoreId {
-  latestGameWin?: GameWinWithId;
+  latestGameWin?: GameWin; // Corrected: GameWinWithId changed to GameWin
 }
 
 
@@ -432,9 +432,9 @@ export default function AdminPage() {
           limit(1)
         );
         const gameWinsSnapshot = await getDocs(gameWinsQuery);
-        let latestGameWin: GameWinWithId | undefined = undefined;
+        let latestGameWin: GameWin | undefined = undefined;
         if (!gameWinsSnapshot.empty) {
-          latestGameWin = { firestoreId: gameWinsSnapshot.docs[0].id, ...gameWinsSnapshot.docs[0].data() } as GameWinWithId;
+          latestGameWin = { firestoreId: gameWinsSnapshot.docs[0].id, ...gameWinsSnapshot.docs[0].data() } as GameWin;
         }
         return { ...participant, latestGameWin };
       });
@@ -795,7 +795,7 @@ export default function AdminPage() {
     });
   };
 
-  const getPrizeStatusBadge = (gameWin?: GameWinWithId): JSX.Element => {
+  const getPrizeStatusBadge = (gameWin?: GameWin): JSX.Element => {
     if (!gameWin) {
       return <Badge variant="outline">No ha jugado</Badge>;
     }
@@ -1671,6 +1671,8 @@ export default function AdminPage() {
   );
 }
 
+
+    
 
     
 
