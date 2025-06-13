@@ -65,7 +65,6 @@ export default function PrizeWonPage() {
           const data = docSnap.data();
           setPrizeValidityDaysFetched(data.prizeValidityDays ?? DEFAULT_PRIZE_VALIDITY_DAYS);
         } else {
-          console.log("Documento de configuración de promoción no encontrado, usando validez por defecto (7 días).");
           setPrizeValidityDaysFetched(DEFAULT_PRIZE_VALIDITY_DAYS);
         }
       } catch (error: any) {
@@ -264,7 +263,7 @@ export default function PrizeWonPage() {
         useCORS: true, 
         scale: 2, 
         backgroundColor: null, 
-        logging: false, // Set to true for more detailed html2canvas logs if needed
+        logging: false, 
         width: clonedCardNode.scrollWidth,
         height: clonedCardNode.scrollHeight,
         x: 0,
@@ -430,3 +429,4 @@ export default function PrizeWonPage() {
   );
 }
     
+

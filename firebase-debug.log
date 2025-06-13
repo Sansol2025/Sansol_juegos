@@ -1,37 +1,37 @@
-[debug] [2025-06-13T10:13:37.205Z] ----------------------------------------------------------------------
-[debug] [2025-06-13T10:13:37.209Z] Command:       /nix/store/rbdrkcs5kkwpalxcd7c6bnm33lk2955n-nodejs-20.19.0/bin/node /home/user/.global_modules/bin/firebase deploy
-[debug] [2025-06-13T10:13:37.210Z] CLI Version:   14.7.0
-[debug] [2025-06-13T10:13:37.211Z] Platform:      linux
-[debug] [2025-06-13T10:13:37.211Z] Node Version:  v20.19.0
-[debug] [2025-06-13T10:13:37.211Z] Time:          Fri Jun 13 2025 10:13:37 GMT+0000 (Coordinated Universal Time)
-[debug] [2025-06-13T10:13:37.212Z] ----------------------------------------------------------------------
+[debug] [2025-06-13T16:32:52.011Z] ----------------------------------------------------------------------
+[debug] [2025-06-13T16:32:52.015Z] Command:       /nix/store/rbdrkcs5kkwpalxcd7c6bnm33lk2955n-nodejs-20.19.0/bin/node /home/user/.global_modules/bin/firebase deploy
+[debug] [2025-06-13T16:32:52.016Z] CLI Version:   14.7.0
+[debug] [2025-06-13T16:32:52.017Z] Platform:      linux
+[debug] [2025-06-13T16:32:52.018Z] Node Version:  v20.19.0
+[debug] [2025-06-13T16:32:52.018Z] Time:          Fri Jun 13 2025 16:32:52 GMT+0000 (Coordinated Universal Time)
+[debug] [2025-06-13T16:32:52.019Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2025-06-13T10:13:37.903Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2025-06-13T10:13:37.904Z] > authorizing via signed-in user (sansolvera1@gmail.com)
-[debug] [2025-06-13T10:13:37.905Z] [iam] checking project juego-sansol for permissions ["firebase.projects.get","firebasehosting.sites.update"]
-[debug] [2025-06-13T10:13:37.907Z] Checked if tokens are valid: true, expires at: 1749812920840
-[debug] [2025-06-13T10:13:37.907Z] Checked if tokens are valid: true, expires at: 1749812920840
-[debug] [2025-06-13T10:13:37.910Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/juego-sansol:testIamPermissions [none]
-[debug] [2025-06-13T10:13:37.910Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/juego-sansol:testIamPermissions x-goog-quota-user=projects/juego-sansol
-[debug] [2025-06-13T10:13:37.910Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/juego-sansol:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2025-06-13T10:13:38.226Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/juego-sansol:testIamPermissions 200
-[debug] [2025-06-13T10:13:38.230Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/juego-sansol:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2025-06-13T10:13:38.231Z] Checked if tokens are valid: true, expires at: 1749812920840
-[debug] [2025-06-13T10:13:38.233Z] Checked if tokens are valid: true, expires at: 1749812920840
-[debug] [2025-06-13T10:13:38.238Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/juego-sansol [none]
-[debug] [2025-06-13T10:13:38.513Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/juego-sansol 200
-[debug] [2025-06-13T10:13:38.514Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/juego-sansol {"projectId":"juego-sansol","projectNumber":"1075235486935","displayName":"Juego Sansol","name":"projects/juego-sansol","resources":{"hostingSite":"juego-sansol"},"state":"ACTIVE","etag":"1_1e49d6f7-6456-4a24-856d-1d83e21ce943"}
-[debug] [2025-06-13T10:13:43.405Z] defaultcredentials: writing to file /home/user/.config/firebase/sansolvera1_gmail_com_application_default_credentials.json
-[debug] [2025-06-13T10:13:43.414Z] Checked if tokens are valid: true, expires at: 1749812920840
-[debug] [2025-06-13T10:13:43.414Z] Checked if tokens are valid: true, expires at: 1749812920840
-[debug] [2025-06-13T10:13:43.416Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/juego-sansol/sites pageToken=&pageSize=10
-[debug] [2025-06-13T10:13:44.654Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/juego-sansol/sites 200
-[debug] [2025-06-13T10:13:44.654Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/juego-sansol/sites {"sites":[{"name":"projects/juego-sansol/sites/juego-sansol","defaultUrl":"https://juego-sansol.web.app","appId":"1:1075235486935:web:1cf71f5ec0bcd6fd21c492","type":"DEFAULT_SITE"}]}
-[debug] [2025-06-13T10:13:44.654Z] Checked if tokens are valid: true, expires at: 1749812920840
-[debug] [2025-06-13T10:13:44.657Z] Checked if tokens are valid: true, expires at: 1749812920840
-[debug] [2025-06-13T10:13:44.657Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1075235486935:web:1cf71f5ec0bcd6fd21c492/config [none]
-[debug] [2025-06-13T10:13:45.483Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1075235486935:web:1cf71f5ec0bcd6fd21c492/config 200
-[debug] [2025-06-13T10:13:45.483Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1075235486935:web:1cf71f5ec0bcd6fd21c492/config {"projectId":"juego-sansol","appId":"1:1075235486935:web:1cf71f5ec0bcd6fd21c492","storageBucket":"juego-sansol.firebasestorage.app","apiKey":"AIzaSyDrjVQ-en0G4tANyJ2wpzN1wO9wVGMsbqc","authDomain":"juego-sansol.firebaseapp.com","messagingSenderId":"1075235486935","measurementId":"G-FCF8T1C5M9"}
+[debug] [2025-06-13T16:32:52.701Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-13T16:32:52.702Z] > authorizing via signed-in user (sansolvera1@gmail.com)
+[debug] [2025-06-13T16:32:52.702Z] [iam] checking project juego-sansol for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-06-13T16:32:52.705Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:32:52.705Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:32:52.707Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/juego-sansol:testIamPermissions [none]
+[debug] [2025-06-13T16:32:52.708Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/juego-sansol:testIamPermissions x-goog-quota-user=projects/juego-sansol
+[debug] [2025-06-13T16:32:52.708Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/juego-sansol:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-06-13T16:32:53.026Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/juego-sansol:testIamPermissions 200
+[debug] [2025-06-13T16:32:53.026Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/juego-sansol:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-06-13T16:32:53.030Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:32:53.031Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:32:53.031Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/juego-sansol [none]
+[debug] [2025-06-13T16:32:53.309Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/juego-sansol 200
+[debug] [2025-06-13T16:32:53.310Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/juego-sansol {"projectId":"juego-sansol","projectNumber":"1075235486935","displayName":"Juego Sansol","name":"projects/juego-sansol","resources":{"hostingSite":"juego-sansol"},"state":"ACTIVE","etag":"1_1e49d6f7-6456-4a24-856d-1d83e21ce943"}
+[debug] [2025-06-13T16:32:58.027Z] defaultcredentials: writing to file /home/user/.config/firebase/sansolvera1_gmail_com_application_default_credentials.json
+[debug] [2025-06-13T16:32:58.037Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:32:58.037Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:32:58.043Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/juego-sansol/sites pageToken=&pageSize=10
+[debug] [2025-06-13T16:32:59.221Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/juego-sansol/sites 200
+[debug] [2025-06-13T16:32:59.225Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/juego-sansol/sites {"sites":[{"name":"projects/juego-sansol/sites/juego-sansol","defaultUrl":"https://juego-sansol.web.app","appId":"1:1075235486935:web:1cf71f5ec0bcd6fd21c492","type":"DEFAULT_SITE"}]}
+[debug] [2025-06-13T16:32:59.225Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:32:59.226Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:32:59.226Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1075235486935:web:1cf71f5ec0bcd6fd21c492/config [none]
+[debug] [2025-06-13T16:33:00.060Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1075235486935:web:1cf71f5ec0bcd6fd21c492/config 200
+[debug] [2025-06-13T16:33:00.060Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1075235486935:web:1cf71f5ec0bcd6fd21c492/config {"projectId":"juego-sansol","appId":"1:1075235486935:web:1cf71f5ec0bcd6fd21c492","storageBucket":"juego-sansol.firebasestorage.app","apiKey":"AIzaSyDrjVQ-en0G4tANyJ2wpzN1wO9wVGMsbqc","authDomain":"juego-sansol.firebaseapp.com","messagingSenderId":"1075235486935","measurementId":"G-FCF8T1C5M9"}
 [info] 
    Thank you for trying our early preview of Next.js support on Firebase Hosting.
    During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
@@ -43,72 +43,17 @@
 
    We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
 
-[debug] [2025-06-13T10:13:55.365Z] Checked if tokens are valid: true, expires at: 1749812920840
-[debug] [2025-06-13T10:13:55.365Z] Checked if tokens are valid: true, expires at: 1749812920840
-[debug] [2025-06-13T10:13:55.366Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/juego-sansol/sites/juego-sansol [none]
-[debug] [2025-06-13T10:13:56.419Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/juego-sansol/sites/juego-sansol 200
-[debug] [2025-06-13T10:13:56.420Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/juego-sansol/sites/juego-sansol {"name":"projects/juego-sansol/sites/juego-sansol","defaultUrl":"https://juego-sansol.web.app","appId":"1:1075235486935:web:1cf71f5ec0bcd6fd21c492","type":"DEFAULT_SITE"}
+[debug] [2025-06-13T16:33:09.204Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:33:09.207Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:33:09.207Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/juego-sansol/sites/juego-sansol [none]
+[debug] [2025-06-13T16:33:10.219Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/juego-sansol/sites/juego-sansol 200
+[debug] [2025-06-13T16:33:10.221Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/juego-sansol/sites/juego-sansol {"name":"projects/juego-sansol/sites/juego-sansol","defaultUrl":"https://juego-sansol.web.app","appId":"1:1075235486935:web:1cf71f5ec0bcd6fd21c492","type":"DEFAULT_SITE"}
 [info]    ▲ Next.js 15.2.3
-   - Environments: .env.local, .env
+
+[info]    - Environments: .env.local, .env
 
 
 [info]    Creating an optimized production build ...
-
-[info]  ⚠ Compiled with warnings
-
-./node_modules/@opentelemetry/sdk-node/build/src/TracerProviderWithEnvExporter.js
-Module not found: Can't resolve '@opentelemetry/exporter-jaeger' in '/home/user/studio/node_modules/@opentelemetry/sdk-node/build/src'
-
-Import trace for requested module:
-./node_modules/@opentelemetry/sdk-node/build/src/TracerProviderWithEnvExporter.js
-./node_modules/@opentelemetry/sdk-node/build/src/sdk.js
-./node_modules/@opentelemetry/sdk-node/build/src/index.js
-./node_modules/@genkit-ai/core/lib/tracing.js
-./node_modules/@genkit-ai/ai/lib/evaluator.js
-./node_modules/genkit/lib/genkit.js
-./node_modules/genkit/lib/index.mjs
-./src/ai/genkit.ts
-./src/ai/flows/detect-fraudulent-submissions.ts
-
-./node_modules/handlebars/lib/index.js
-require.extensions is not supported by webpack. Use a loader instead.
-
-Import trace for requested module:
-./node_modules/handlebars/lib/index.js
-./node_modules/dotprompt/dist/index.js
-./node_modules/@genkit-ai/core/lib/registry.js
-./node_modules/genkit/lib/registry.js
-./node_modules/genkit/lib/genkit.js
-./node_modules/genkit/lib/index.mjs
-./src/ai/genkit.ts
-./src/ai/flows/detect-fraudulent-submissions.ts
-
-./node_modules/handlebars/lib/index.js
-require.extensions is not supported by webpack. Use a loader instead.
-
-Import trace for requested module:
-./node_modules/handlebars/lib/index.js
-./node_modules/dotprompt/dist/index.js
-./node_modules/@genkit-ai/core/lib/registry.js
-./node_modules/genkit/lib/registry.js
-./node_modules/genkit/lib/genkit.js
-./node_modules/genkit/lib/index.mjs
-./src/ai/genkit.ts
-./src/ai/flows/detect-fraudulent-submissions.ts
-
-./node_modules/handlebars/lib/index.js
-require.extensions is not supported by webpack. Use a loader instead.
-
-Import trace for requested module:
-./node_modules/handlebars/lib/index.js
-./node_modules/dotprompt/dist/index.js
-./node_modules/@genkit-ai/core/lib/registry.js
-./node_modules/genkit/lib/registry.js
-./node_modules/genkit/lib/genkit.js
-./node_modules/genkit/lib/index.mjs
-./src/ai/genkit.ts
-./src/ai/flows/detect-fraudulent-submissions.ts
-
 
 [info]  ✓ Compiled successfully
 
@@ -116,19 +61,193 @@ Import trace for requested module:
 
 [info] Failed to compile.
 
-./src/app/admin/page.tsx:26:24
-Type error: '"@/types/gameWin"' has no exported member named 'GameWinWithId'. Did you mean 'GameWinWrite'?
 
-  24 | import { cn } from "@/lib/utils";
-  25 | import type { ParticipantWithFirestoreId, Participant } from '@/types/participant';
-> 26 | import type { GameWin, GameWinWithId } from '@/types/gameWin';
+[info] ./src/ai/flows/detect-fraudulent-submissions.ts:11:24
+Type error: Cannot find module '@/ai/genkit' or its corresponding type declarations.
+
+   9 |  */
+  10 |
+> 11 | import { ai, db } from '@/ai/genkit'; // Import db from genkit setup
      |                        ^
-  27 |
-  28 | const DEFAULT_PRIZE_FREQUENCY = 10;
-  29 | const DEFAULT_PRIZE_STOCK = 10;
+  12 | import { z } from 'genkit';
+  13 |
+  14 | const DetectFraudulentSubmissionInputSchema = z.object({
 
 [info] Next.js build worker exited with code: 1 and signal: null
 
-[debug] [2025-06-13T10:15:51.507Z] Error: ENOENT: no such file or directory, open '/home/user/studio/.next/export-marker.json'
+[debug] [2025-06-13T16:33:54.247Z] Error: ENOENT: no such file or directory, open '/home/user/studio/.next/export-marker.json'
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-06-13T16:39:21.601Z] ----------------------------------------------------------------------
+[debug] [2025-06-13T16:39:21.605Z] Command:       /nix/store/rbdrkcs5kkwpalxcd7c6bnm33lk2955n-nodejs-20.19.0/bin/node /home/user/.global_modules/bin/firebase deploy
+[debug] [2025-06-13T16:39:21.608Z] CLI Version:   14.7.0
+[debug] [2025-06-13T16:39:21.609Z] Platform:      linux
+[debug] [2025-06-13T16:39:21.610Z] Node Version:  v20.19.0
+[debug] [2025-06-13T16:39:21.610Z] Time:          Fri Jun 13 2025 16:39:21 GMT+0000 (Coordinated Universal Time)
+[debug] [2025-06-13T16:39:21.611Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-06-13T16:39:23.047Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-13T16:39:23.048Z] > authorizing via signed-in user (sansolvera1@gmail.com)
+[debug] [2025-06-13T16:39:23.048Z] [iam] checking project juego-sansol for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-06-13T16:39:23.050Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:39:23.051Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:39:23.053Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/juego-sansol:testIamPermissions [none]
+[debug] [2025-06-13T16:39:23.053Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/juego-sansol:testIamPermissions x-goog-quota-user=projects/juego-sansol
+[debug] [2025-06-13T16:39:23.054Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/juego-sansol:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-06-13T16:39:23.413Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/juego-sansol:testIamPermissions 200
+[debug] [2025-06-13T16:39:23.418Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/juego-sansol:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-06-13T16:39:23.424Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:39:23.428Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:39:23.428Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/juego-sansol [none]
+[debug] [2025-06-13T16:39:22.355Z] ----------------------------------------------------------------------
+[debug] [2025-06-13T16:39:22.361Z] Command:       /nix/store/rbdrkcs5kkwpalxcd7c6bnm33lk2955n-nodejs-20.19.0/bin/node /home/user/.global_modules/bin/firebase deploy
+[debug] [2025-06-13T16:39:22.362Z] CLI Version:   14.7.0
+[debug] [2025-06-13T16:39:22.362Z] Platform:      linux
+[debug] [2025-06-13T16:39:22.362Z] Node Version:  v20.19.0
+[debug] [2025-06-13T16:39:22.363Z] Time:          Fri Jun 13 2025 16:39:22 GMT+0000 (Coordinated Universal Time)
+[debug] [2025-06-13T16:39:22.363Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-06-13T16:39:23.366Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-13T16:39:23.367Z] > authorizing via signed-in user (sansolvera1@gmail.com)
+[debug] [2025-06-13T16:39:23.367Z] [iam] checking project juego-sansol for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-06-13T16:39:23.370Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:39:23.370Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:39:23.372Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/juego-sansol:testIamPermissions [none]
+[debug] [2025-06-13T16:39:23.373Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/juego-sansol:testIamPermissions x-goog-quota-user=projects/juego-sansol
+[debug] [2025-06-13T16:39:23.373Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/juego-sansol:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-06-13T16:39:23.673Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/juego-sansol:testIamPermissions 200
+[debug] [2025-06-13T16:39:23.675Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/juego-sansol:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-06-13T16:39:23.676Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:39:23.676Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:39:23.677Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/juego-sansol [none]
+[debug] [2025-06-13T16:39:23.806Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/juego-sansol 200
+[debug] [2025-06-13T16:39:23.973Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/juego-sansol 200
+[debug] [2025-06-13T16:39:23.808Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/juego-sansol {"projectId":"juego-sansol","projectNumber":"1075235486935","displayName":"Juego Sansol","name":"projects/juego-sansol","resources":{"hostingSite":"juego-sansol"},"state":"ACTIVE","etag":"1_1e49d6f7-6456-4a24-856d-1d83e21ce943"}
+[debug] [2025-06-13T16:39:32.253Z] defaultcredentials: writing to file /home/user/.config/firebase/sansolvera1_gmail_com_application_default_credentials.json
+[debug] [2025-06-13T16:39:32.308Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:39:32.309Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:39:32.321Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/juego-sansol/sites pageToken=&pageSize=10
+[debug] [2025-06-13T16:39:23.973Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/juego-sansol {"projectId":"juego-sansol","projectNumber":"1075235486935","displayName":"Juego Sansol","name":"projects/juego-sansol","resources":{"hostingSite":"juego-sansol"},"state":"ACTIVE","etag":"1_1e49d6f7-6456-4a24-856d-1d83e21ce943"}
+[debug] [2025-06-13T16:39:32.745Z] defaultcredentials: writing to file /home/user/.config/firebase/sansolvera1_gmail_com_application_default_credentials.json
+[debug] [2025-06-13T16:39:32.761Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:39:32.761Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:39:32.765Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/juego-sansol/sites pageToken=&pageSize=10
+[debug] [2025-06-13T16:39:33.570Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/juego-sansol/sites 200
+[debug] [2025-06-13T16:39:33.571Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/juego-sansol/sites {"sites":[{"name":"projects/juego-sansol/sites/juego-sansol","defaultUrl":"https://juego-sansol.web.app","appId":"1:1075235486935:web:1cf71f5ec0bcd6fd21c492","type":"DEFAULT_SITE"}]}
+[debug] [2025-06-13T16:39:33.572Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:39:33.572Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:39:33.573Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1075235486935:web:1cf71f5ec0bcd6fd21c492/config [none]
+[debug] [2025-06-13T16:39:33.860Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/juego-sansol/sites 200
+[debug] [2025-06-13T16:39:33.860Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/juego-sansol/sites {"sites":[{"name":"projects/juego-sansol/sites/juego-sansol","defaultUrl":"https://juego-sansol.web.app","appId":"1:1075235486935:web:1cf71f5ec0bcd6fd21c492","type":"DEFAULT_SITE"}]}
+[debug] [2025-06-13T16:39:33.863Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:39:33.863Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:39:33.871Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1075235486935:web:1cf71f5ec0bcd6fd21c492/config [none]
+[debug] [2025-06-13T16:39:34.600Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1075235486935:web:1cf71f5ec0bcd6fd21c492/config 200
+[debug] [2025-06-13T16:39:34.603Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1075235486935:web:1cf71f5ec0bcd6fd21c492/config {"projectId":"juego-sansol","appId":"1:1075235486935:web:1cf71f5ec0bcd6fd21c492","storageBucket":"juego-sansol.firebasestorage.app","apiKey":"AIzaSyDrjVQ-en0G4tANyJ2wpzN1wO9wVGMsbqc","authDomain":"juego-sansol.firebaseapp.com","messagingSenderId":"1075235486935","measurementId":"G-FCF8T1C5M9"}
+[debug] [2025-06-13T16:39:34.630Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1075235486935:web:1cf71f5ec0bcd6fd21c492/config 200
+[debug] [2025-06-13T16:39:34.631Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1075235486935:web:1cf71f5ec0bcd6fd21c492/config {"projectId":"juego-sansol","appId":"1:1075235486935:web:1cf71f5ec0bcd6fd21c492","storageBucket":"juego-sansol.firebasestorage.app","apiKey":"AIzaSyDrjVQ-en0G4tANyJ2wpzN1wO9wVGMsbqc","authDomain":"juego-sansol.firebaseapp.com","messagingSenderId":"1075235486935","measurementId":"G-FCF8T1C5M9"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 15.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 15.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2025-06-13T16:39:51.710Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:39:51.713Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:39:51.715Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/juego-sansol/sites/juego-sansol [none]
+[debug] [2025-06-13T16:39:52.769Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:39:52.772Z] Checked if tokens are valid: true, expires at: 1749834633629
+[debug] [2025-06-13T16:39:52.778Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/juego-sansol/sites/juego-sansol [none]
+[debug] [2025-06-13T16:39:52.822Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/juego-sansol/sites/juego-sansol 200
+[debug] [2025-06-13T16:39:52.824Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/juego-sansol/sites/juego-sansol {"name":"projects/juego-sansol/sites/juego-sansol","defaultUrl":"https://juego-sansol.web.app","appId":"1:1075235486935:web:1cf71f5ec0bcd6fd21c492","type":"DEFAULT_SITE"}
+[debug] [2025-06-13T16:39:53.846Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/juego-sansol/sites/juego-sansol 200
+[debug] [2025-06-13T16:39:53.851Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/juego-sansol/sites/juego-sansol {"name":"projects/juego-sansol/sites/juego-sansol","defaultUrl":"https://juego-sansol.web.app","appId":"1:1075235486935:web:1cf71f5ec0bcd6fd21c492","type":"DEFAULT_SITE"}
+[info]    ▲ Next.js 15.2.3
+
+[info]    - Environments: .env.local, .env
+
+
+[info]    ▲ Next.js 15.2.3
+
+[info]    - Environments: .env.local, .env
+
+[info] 
+
+[info]    Creating an optimized production build ...
+
+[info]    Creating an optimized production build ...
+
+[info]  ✓ Compiled successfully
+
+[info]  ✓ Compiled successfully
+
+[info]    Linting and checking validity of types ...
+
+[info]    Linting and checking validity of types ...
+
+[info] Failed to compile.
+
+
+[info] ./src/app/admin/page.tsx:209:35
+Type error: No overload matches this call.
+  Overload 1 of 2, '(storage: FirebaseStorage, url?: string | undefined): StorageReference', gave the following error.
+    Argument of type 'FirebaseStorage | undefined' is not assignable to parameter of type 'FirebaseStorage'.
+      Type 'undefined' is not assignable to type 'FirebaseStorage'.
+  Overload 2 of 2, '(storageOrRef: FirebaseStorage | StorageReference, path?: string | undefined): StorageReference', gave the following error.
+    Argument of type 'FirebaseStorage | undefined' is not assignable to parameter of type 'FirebaseStorage | StorageReference'.
+      Type 'undefined' is not assignable to type 'FirebaseStorage | StorageReference'.
+
+  207 |       const fileExtension = file.name.split('.').pop();
+  208 |       const fileName = `prize-${prizeId}-${Date.now()}.${fileExtension}`;
+> 209 |       const imageRef = storageRef(storage, `prizes/${fileName}`);
+      |                                   ^
+  210 |       const uploadTask = uploadBytesResumable(imageRef, file);
+  211 |
+  212 |       uploadTask.on('state_changed',
+
+[info] Next.js build worker exited with code: 1 and signal: null
+
+[debug] [2025-06-13T16:41:41.488Z] Error: ENOENT: no such file or directory, open '/home/user/studio/.next/export-marker.json'
+[error] 
+[error] Error: An unexpected error has occurred.
+[info] Failed to compile.
+
+
+[info] ./src/app/admin/page.tsx:209:35
+Type error: No overload matches this call.
+  Overload 1 of 2, '(storage: FirebaseStorage, url?: string | undefined): StorageReference', gave the following error.
+    Argument of type 'FirebaseStorage | undefined' is not assignable to parameter of type 'FirebaseStorage'.
+      Type 'undefined' is not assignable to type 'FirebaseStorage'.
+  Overload 2 of 2, '(storageOrRef: FirebaseStorage | StorageReference, path?: string | undefined): StorageReference', gave the following error.
+    Argument of type 'FirebaseStorage | undefined' is not assignable to parameter of type 'FirebaseStorage | StorageReference'.
+      Type 'undefined' is not assignable to type 'FirebaseStorage | StorageReference'.
+
+  207 |       const fileExtension = file.name.split('.').pop();
+  208 |       const fileName = `prize-${prizeId}-${Date.now()}.${fileExtension}`;
+> 209 |       const imageRef = storageRef(storage, `prizes/${fileName}`);
+      |                                   ^
+  210 |       const uploadTask = uploadBytesResumable(imageRef, file);
+  211 |
+  212 |       uploadTask.on('state_changed',
+
+[info] Next.js build worker exited with code: 1 and signal: null
+
+[debug] [2025-06-13T16:41:42.443Z] Error: ENOENT: no such file or directory, open '/home/user/studio/.next/export-marker.json'
 [error] 
 [error] Error: An unexpected error has occurred.

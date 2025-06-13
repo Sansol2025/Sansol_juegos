@@ -1,50 +1,81 @@
 
-import { genkit } from 'genkit';
-import { googleAI } from '@genkit-ai/googleai';
-import * as admin from 'firebase-admin';
+'use server';
+/**
+ * @fileOverview Initializes the Genkit AI and Firebase Admin SDK.
+ *
+ * Exports:
+ * - ai: The Genkit AI instance.
+ * - db: The Firebase Admin Firestore instance (conditionally).
+ */
 
-// Inicializar Firebase Admin SDK.
-let dbInstance: admin.firestore.Firestore | null = null;
+import {genkit, Ai} from 'genkit';
+import {googleAI} from 'genkit/googleai';
+import {firebase} from 'genkit/firebase';
+import admin, {ServiceAccount} from 'firebase-admin';
+import type {Firestore} from 'firebase-admin/firestore';
 
-if (!admin.apps.length) {
-  console.log("[Genkit] Intentando inicializar Firebase Admin SDK...");
-  try {
-    // Esta función buscará automáticamente las credenciales en el entorno.
-    // En App Hosting, las encontrará sin configuración extra.
-    // En local, usará la variable de entorno 'GOOGLE_APPLICATION_CREDENTIALS'.
-    admin.initializeApp();
-    dbInstance = admin.firestore();
-    console.log("[Genkit] Firebase Admin SDK inicializado y Firestore instanciado correctamente.");
-  } catch (error) {
-    console.error("[Genkit] ERROR CRÍTICO: No se pudo inicializar Firebase Admin SDK o Firestore:", error);
-    // Considerar lanzar el error aquí si la app no puede funcionar sin esto.
-    // throw new Error(`Failed to initialize Firebase Admin SDK: ${error.message}`);
+import serviceAccountKey from '../../serviceAccountKey.json';
+
+let db: Firestore | undefined = undefined;
+
+const serviceAccount = serviceAccountKey as ServiceAccount;
+
+try {
+  if (admin.apps.length === 0) {
+    admin.initializeApp({
+      credential: admin.credential.cert(serviceAccount),
+      // projectId and storageBucket are not strictly needed here if you only use Firestore Admin
+      // but good to have if you expand Admin SDK usage.
+      // projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+      // storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+    });
+    
   }
+  db = admin.firestore();
+  
+} catch (e: any) {
+  console.error(
+    '[Genkit] ERROR CRÍTICO: No se pudo inicializar Firebase Admin SDK o Firestore:',
+    e.message,
+    e.stack
+  );
+  db = undefined; // Ensure db is undefined if initialization fails
+}
+
+if (!db) {
+  console.warn(
+    '[Genkit] ADVERTENCIA CRÍTICA: db (Firestore Admin instance) no está disponible. ' +
+      'Los flujos de Genkit que dependan de Firestore Admin fallarán. ' +
+      'Revisa los logs de inicialización de Firebase Admin.'
+  );
+}
+
+// Initialize Genkit AI instance
+let ai: Ai;
+if (process.env.GOOGLE_API_KEY) {
+  ai = genkit({
+    plugins: [
+      googleAI({
+        apiKey: process.env.GOOGLE_API_KEY,
+      }),
+      firebase(), // For Firebase-specific Genkit functionalities if needed later
+    ],
+    // Do not set logLevel: 'debug' in production environments
+    // logLevel: 'debug',
+    enableTracingAndMetrics: true, // Recommended for production monitoring
+  });
 } else {
-  console.log("[Genkit] Firebase Admin SDK ya estaba inicializado.");
-  // Asegurarse de que dbInstance se asigne incluso si ya estaba inicializado.
-  if (admin.apps[0]) {
-    dbInstance = admin.firestore(admin.apps[0]!);
-  } else {
-     console.error("[Genkit] ERROR: Firebase Admin SDK reporta apps inicializadas, pero admin.apps[0] es undefined.");
-  }
+  console.warn(
+    '[Genkit] ADVERTENCIA: La variable de entorno GOOGLE_API_KEY no está configurada. ' +
+      'Genkit se inicializará sin el plugin googleAI, lo que limitará su funcionalidad de IA. ' +
+      'Asegúrate de que GOOGLE_API_KEY esté definida en tu entorno de servidor.'
+  );
+  ai = genkit({
+    plugins: [
+      firebase(), // Initialize with Firebase plugin even if Google AI is not available
+    ],
+    enableTracingAndMetrics: true,
+  });
 }
 
-// Exportamos la instancia de la base de datos para usarla en los flujos.
-export const db = dbInstance!; 
-
-if (!dbInstance) {
-    console.error("[Genkit] ADVERTENCIA CRÍTICA: db (Firestore Admin instance) no está disponible después del intento de inicialización. Los flujos de Genkit que usen Firestore fallarán.");
-}
-
-export const ai = genkit({
-  plugins: [googleAI()],
-  model: 'googleai/gemini-2.0-flash',
-});
-
-// Verificación adicional para Genkit y Google AI
-if (!process.env.GOOGLE_API_KEY && process.env.NODE_ENV !== 'production') {
-  console.warn("[Genkit] ADVERTENCIA: La variable de entorno GOOGLE_API_KEY no está configurada. Las llamadas a Google AI (Genkit) podrían fallar si no se proporcionan credenciales de otra manera.");
-} else if (!process.env.GOOGLE_API_KEY && process.env.NODE_ENV === 'production') {
-   console.info("[Genkit] INFO: En producción, se espera que GOOGLE_API_KEY esté configurada en el entorno del servidor o que las credenciales de ADC (Application Default Credentials) estén disponibles para Genkit.");
-}
+export {ai, db};
