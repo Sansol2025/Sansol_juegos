@@ -1,0 +1,43 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Configuración de la Promoción (settings/promoConfig)
+    match /settings/promoConfig {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Gestión de Premios (prizes)
+    match /prizes/{prizeId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Participantes (participants)
+    match /participants/{participantId} {
+      allow read: if true;
+      allow create: if true;
+    }
+
+    // Gestión de Cuentas de Verificador (verifiers)
+    match /verifiers/{verifierId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Premios Reclamados (claimedPrizes)
+    match /claimedPrizes/{claimedPrizeId} {
+      allow read: if true;
+      allow create: if true;
+    }
+
+    // Alertas de Fraude (fraudAlerts)
+    // - El admin necesita leer/listar para el dashboard.
+    // - El sistema (funciones de Genkit/Cloud Functions) necesita escribir nuevas alertas.
+    match /fraudAlerts/{alertId} {
+      allow read, write: if true; // Permitir lectura y escritura. En producción: restringir.
+    }
+  }
+}

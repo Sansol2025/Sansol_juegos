@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'PT Sans', sans-serif; /* Default body font */
+}
+
+@layer base {
+  :root {
+    /* Colores Primarios: Turquesa Moderno, Verde Lima */
+    /* Colores Secundarios/Acentos: Azul Celeste, Blanco/Gris Claro */
+
+    --background: 240 5% 96%; /* Gris Muy Claro (#F0F0F0) */
+    --foreground: 240 10% 3.9%; /* Casi Negro para texto */
+
+    --card: 0 0% 100%; /* Blanco para tarjetas */
+    --card-foreground: 240 10% 3.9%; /* Casi Negro */
+
+    --popover: 0 0% 100%; /* Blanco */
+    --popover-foreground: 240 10% 3.9%; /* Casi Negro */
+
+    --primary: 168 76% 42%; /* Turquesa Moderno (#1ABC9C) */
+    --primary-hsl: 168 76% 42%;
+    --primary-foreground: 0 0% 100%; /* Blanco para texto sobre turquesa */
+
+    --secondary: 120 61% 50%; /* Verde Lima (#32CD32) */
+    --secondary-hsl: 120 61% 50%;
+    --secondary-foreground: 0 0% 100%; /* Blanco para texto sobre verde lima */
+
+    --muted: 240 4.8% 90%; /* Gris Claro para elementos silenciados */
+    --muted-foreground: 240 3.8% 46.1%; /* Gris Medio */
+
+    --accent: 200 70% 60%; /* Azul Celeste (#87CEEB) */
+    --accent-foreground: 240 10% 3.9%; /* Casi Negro para texto sobre azul celeste */
+
+    --destructive: 0 84.2% 60.2%; /* Rojo por defecto */
+    --destructive-foreground: 0 0% 98%; /* Texto claro para Rojo */
+
+    --border: 240 5.9% 85%; /* Gris para bordes */
+    --border-hsl: 240 5.9% 85%;
+    --input: 240 5.9% 90%; /* Gris para inputs */
+    --ring: 168 76% 42%; /* Turquesa Moderno para anillos de foco */
+    
+    --chart-1: 168 76% 42%; /* Turquesa Moderno */
+    --chart-2: 120 61% 50%; /* Verde Lima */
+    --chart-3: 200 70% 60%; /* Azul Celeste */
+    --chart-4: 25 85% 55%;  /* Un amarillo/naranja diferente (se mantiene de la paleta anterior) */
+    --chart-5: 300 70% 50%; /* Un magenta/púrpura (se mantiene de la paleta anterior) */
+    --radius: 0.5rem;
+
+    /* Sidebar variables - themed with new palette */
+    --sidebar-background: 240 5% 94%; /* Un poco más oscuro que el background principal */
+    --sidebar-foreground: 240 10% 3.9%; /* Casi Negro */
+    --sidebar-primary: 168 76% 42%; /* Turquesa Moderno */
+    --sidebar-primary-foreground: 0 0% 100%; /* Blanco */
+    --sidebar-accent: 120 61% 50%; /* Verde Lima */
+    --sidebar-accent-foreground: 0 0% 100%; /* Blanco */
+    --sidebar-border: 240 5.9% 80%; /* Un poco más oscuro para bordes de sidebar */
+    --sidebar-ring: 168 76% 42%; /* Turquesa Moderno */
+  }
+
+  .dark {
+    --background: 240 6% 10%; /* Gris Muy Oscuro */
+    --foreground: 0 0% 98%; /* Casi Blanco para texto */
+
+    --card: 240 6% 13%; /* Gris un poco más claro que el fondo */
+    --card-foreground: 0 0% 98%; /* Casi Blanco */
+
+    --popover: 240 6% 13%; /* Gris un poco más claro que el fondo */
+    --popover-foreground: 0 0% 98%; /* Casi Blanco */
+
+    --primary: 168 76% 48%; /* Turquesa Moderno (ligeramente más claro para tema oscuro) */
+    --primary-hsl: 168 76% 48%;
+    --primary-foreground: 240 10% 3.9%; /* Casi Negro para contraste con Turquesa más claro */
+
+    --secondary: 120 61% 55%; /* Verde Lima (ligeramente más claro para tema oscuro) */
+    --secondary-hsl: 120 61% 55%;
+    --secondary-foreground: 240 10% 3.9%; /* Casi Negro para contraste con Verde Lima */
+
+    --muted: 240 5% 18%; /* Gris Oscuro para elementos silenciados */
+    --muted-foreground: 240 5% 64.9%; /* Gris Medio-Claro */
+
+    --accent: 200 70% 65%; /* Azul Celeste (ligeramente más claro para tema oscuro) */
+    --accent-foreground: 240 10% 3.9%; /* Casi Negro */
+
+    --destructive: 0 62.8% 30.6%; /* Rojo oscuro por defecto */
+    --destructive-foreground: 0 0% 98%; /* Texto claro para Rojo */
+
+    --border: 240 3.7% 25%; /* Gris Oscuro para bordes */
+    --border-hsl: 240 3.7% 25%;
+    --input: 240 3.7% 20%; /* Gris Oscuro para inputs */
+    --ring: 168 76% 48%; /* Turquesa Moderno para anillos de foco */
+    
+    --chart-1: 168 76% 48%; 
+    --chart-2: 120 61% 55%;
+    --chart-3: 200 70% 65%;
+    --chart-4: 25 90% 60%;
+    --chart-5: 300 75% 55%;
+    
+    /* Sidebar dark theme */
+    --sidebar-background: 240 6% 12%; /* Ligeramente más oscuro que el fondo */
+    --sidebar-foreground: 0 0% 98%; /* Casi Blanco */
+    --sidebar-primary: 168 76% 48%; /* Turquesa Moderno */
+    --sidebar-primary-foreground: 240 10% 3.9%; /* Casi Negro */
+    --sidebar-accent: 120 61% 55%; /* Verde Lima */
+    --sidebar-accent-foreground: 240 10% 3.9%; /* Casi Negro */
+    --sidebar-border: 240 3.7% 22%; /* Un poco más oscuro para bordes de sidebar */
+    --sidebar-ring: 168 76% 48%; /* Turquesa Moderno */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
+  }
+}
