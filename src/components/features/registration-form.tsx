@@ -19,7 +19,7 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
-import { detectFraudulentSubmission, type DetectFraudulentSubmissionInput } from "@/ai/flows/detect-fraudulent-submissions";
+// import { detectFraudulentSubmission, type DetectFraudulentSubmissionInput } from "@/ai/flows/detect-fraudulent-submissions";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Loader2, User, Phone, CheckSquare } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -82,13 +82,19 @@ export default function RegistrationForm() {
         return;
       }
 
-      const aiInput: DetectFraudulentSubmissionInput = {
-        fullName: data.fullName,
-        phoneNumber: data.phoneNumber,
-        consent: data.consent,
-      };
+      const response = await fetch('/api/detect-fraud', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Fraud detection service failed');
+      }
       
-      const fraudCheckResult = await detectFraudulentSubmission(aiInput);
+      const fraudCheckResult = await response.json();
 
       if (fraudCheckResult.isFraudulent) {
         toast({

@@ -10,6 +10,19 @@ const nextConfig: NextConfig = {
     // Set to false for production builds
     ignoreDuringBuilds: false,
   },
+  webpack: (
+    config,
+    { isServer, nextRuntime, webpack }
+  ) => {
+    if (isServer && nextRuntime === "nodejs") {
+      config.plugins.push(
+        new webpack.IgnorePlugin({
+          resourceRegExp: /^(?:@google-cloud\/functions-framework|@opentelemetry\/exporter-jaeger|@opentelemetry\/propagator-gcp|@opentelemetry\/sdk-trace-gcp|firebase-functions|handlebars|undici)$/
+        })
+      );
+    }
+    return config;
+  },
   images: {
     remotePatterns: [
       {
